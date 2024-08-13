@@ -1,4 +1,5 @@
 import { getData } from "@/app/actions/neondb";
+export const revaidate = 0;
 
 export async function GET() {
     const data = await getData().then((data) => {

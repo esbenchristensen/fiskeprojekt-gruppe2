@@ -7,10 +7,15 @@ export default async function Page() {
     });
     return (
         <div>
-            <h1>My Todos</h1>
+            <h1>My Users</h1>
             <ul>
-                {data.map((todo) => (
-                    <li key={todo.id}>{todo.title}</li>
+                {data.map((user) => (
+                    <li key={user.id}>
+                        <div>
+                            <h2>{user.username}</h2>
+                            <p>{user.password}</p>
+                        </div>
+                    </li>
                 ))}
             </ul>
         </div>
