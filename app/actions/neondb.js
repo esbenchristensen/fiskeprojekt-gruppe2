@@ -2,6 +2,7 @@
 import { neon } from "@neondatabase/serverless";
 import { drizzle } from "drizzle-orm/neon-http";
 import { users } from "../drizzle/userSchema";
+import { revalidatePath } from "next/cache";
 
 export async function getData() {
     const sql = neon(process.env.DATABASE_URL);
@@ -10,5 +11,7 @@ export async function getData() {
     const result = await db.select().from(users);
 
     console.log(result);
+
+    revalidatePath("/");
     return result;
 }
