@@ -5,12 +5,12 @@ export async function POST(req) {
     try {
         const formData = await req.formData();
 
-        let username = formData.get("username");
-        console.log(username);
+        let email = formData.get("email");
+        console.log(email);
         let password = formData.get("password");
         console.log(password);
 
-        let res = await loginUser({ username, password }).then((data) => {
+        let res = await loginUser({ email, password }).then((data) => {
             console.log(data);
             return data;
         });
